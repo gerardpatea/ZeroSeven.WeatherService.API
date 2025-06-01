@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35806.99 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZeroSeven.WeatherService.API", "ZeroSeven.WeatherService.API\ZeroSeven.WeatherService.API.csproj", "{0239F3A1-E451-497E-A512-7347A1E56754}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZeroSeven.TripService.Client", "ZeroSeven.TripService.Client\ZeroSeven.TripService.Client.csproj", "{79CEBBCC-2BA4-4D2D-806A-C0C7293E2353}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZeroSeven.WillyWeather.Client", "ZeroSeven.WillyWeather.Client\ZeroSeven.WillyWeather.Client.csproj", "{160BB889-1146-4E3D-BD4B-CDB60B709237}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZeroSeven.WeatherForecastService", "ZeroSevent.WeatherForecastService\ZeroSeven.WeatherForecastService.csproj", "{F2D2FF83-9007-42F8-97CF-5E159558E716}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZeroSeven.WeatherForecastService.Unit.Tests", "ZeroSeven.WeatherForecastService.Unit.Tests\ZeroSeven.WeatherForecastService.Unit.Tests.csproj", "{31266D0B-08E5-4EBE-900D-0F0D6AD6149F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0239F3A1-E451-497E-A512-7347A1E56754}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0239F3A1-E451-497E-A512-7347A1E56754}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0239F3A1-E451-497E-A512-7347A1E56754}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0239F3A1-E451-497E-A512-7347A1E56754}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79CEBBCC-2BA4-4D2D-806A-C0C7293E2353}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79CEBBCC-2BA4-4D2D-806A-C0C7293E2353}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79CEBBCC-2BA4-4D2D-806A-C0C7293E2353}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79CEBBCC-2BA4-4D2D-806A-C0C7293E2353}.Release|Any CPU.Build.0 = Release|Any CPU
+		{160BB889-1146-4E3D-BD4B-CDB60B709237}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{160BB889-1146-4E3D-BD4B-CDB60B709237}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{160BB889-1146-4E3D-BD4B-CDB60B709237}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{160BB889-1146-4E3D-BD4B-CDB60B709237}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2D2FF83-9007-42F8-97CF-5E159558E716}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2D2FF83-9007-42F8-97CF-5E159558E716}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2D2FF83-9007-42F8-97CF-5E159558E716}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2D2FF83-9007-42F8-97CF-5E159558E716}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31266D0B-08E5-4EBE-900D-0F0D6AD6149F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31266D0B-08E5-4EBE-900D-0F0D6AD6149F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31266D0B-08E5-4EBE-900D-0F0D6AD6149F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31266D0B-08E5-4EBE-900D-0F0D6AD6149F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {53250E2B-1795-4347-A4CF-C5F1770C9752}
+	EndGlobalSection
+EndGlobal

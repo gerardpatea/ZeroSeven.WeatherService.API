@@ -1,0 +1,6 @@
+@ZeroSeven.WeatherService.API_HostAddress = http://localhost:5196
+
+GET {{ZeroSeven.WeatherService.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
