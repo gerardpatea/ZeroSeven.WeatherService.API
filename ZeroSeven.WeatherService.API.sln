@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZeroSeven.TripService.Clien
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZeroSeven.WillyWeather.Client", "ZeroSeven.WillyWeather.Client\ZeroSeven.WillyWeather.Client.csproj", "{160BB889-1146-4E3D-BD4B-CDB60B709237}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZeroSeven.WeatherForecastService", "ZeroSevent.WeatherForecastService\ZeroSeven.WeatherForecastService.csproj", "{F2D2FF83-9007-42F8-97CF-5E159558E716}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZeroSeven.WeatherForecastService", "ZeroSeven.WeatherForecastService\ZeroSeven.WeatherForecastService.csproj", "{F2D2FF83-9007-42F8-97CF-5E159558E716}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZeroSeven.WeatherForecastService.Unit.Tests", "ZeroSeven.WeatherForecastService.Unit.Tests\ZeroSeven.WeatherForecastService.Unit.Tests.csproj", "{31266D0B-08E5-4EBE-900D-0F0D6AD6149F}"
 EndProject
