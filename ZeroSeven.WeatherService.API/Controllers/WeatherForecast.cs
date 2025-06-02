@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Swashbuckle.AspNetCore.Annotations;
 using ZeroSeven.TripService.Client;
 using ZeroSevent.WeatherForecastService;
 
@@ -30,6 +31,9 @@ public class WeatherForecastController : ControllerBase
     #region API
 
     [HttpGet(Name = "GetWeatherForecast")]
+    [SwaggerResponse(200, "Successfully returns a weather forecast", typeof(GetWeatherForecastResponse))]
+    [SwaggerResponse(500, "Unknown error occurred")]
+
     public async Task<IActionResult> Get()
     {
         try
@@ -42,7 +46,7 @@ public class WeatherForecastController : ControllerBase
         {
             _logger.LogError(ex, ex.Message);
 
-            return Problem("Something went wrong");
+            return Problem("Unknown error occurred");
         }
     }
 

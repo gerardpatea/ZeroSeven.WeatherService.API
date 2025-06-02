@@ -9,6 +9,7 @@
   <ItemGroup>
     <PackageReference Include="RestSharp" Version="112.1.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="8.1.2" />
   </ItemGroup>
 
   <ItemGroup>

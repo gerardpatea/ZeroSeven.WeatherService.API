@@ -36,6 +36,8 @@ namespace ZeroSeven.WillyWeather.Client
         {
             var cacheKey = $"GetWeatherForecast:{getWeatherForecastRequest.LocationId}:{getWeatherForecastRequest.Date.ToString("yyyy-MM-dd")}";
 
+            //Lets check our cache first to save on API calls
+
             if (!_memoryCache.TryGetValue(cacheKey, out GetWeatherForecastResponse item))
             {
                 var date = getWeatherForecastRequest.Date.ToString(GET_WEATHER_DATE_FORMAT);
@@ -51,6 +53,8 @@ namespace ZeroSeven.WillyWeather.Client
 
                 var result = await _restClient.ExecuteGetAsync<GetWeatherForecastResponse>(request);
 
+                //Expire the cache if it doesnt get touched within 5minutes
+                
                 var cacheOptions = new MemoryCacheEntryOptions()
                     .SetSlidingExpiration(TimeSpan.FromMinutes(5));
 
