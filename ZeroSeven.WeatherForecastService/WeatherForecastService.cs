@@ -3,7 +3,7 @@ using Microsoft.Extensions.Logging;
 using ZeroSeven.TripService.Client;
 using ZeroSeven.WillyWeather.Client;
 
-namespace ZeroSevent.WeatherForecastService
+namespace ZeroSeven.WeatherForecastService
 {
     public class WeatherForecastService : IWeatherForecastService
     {

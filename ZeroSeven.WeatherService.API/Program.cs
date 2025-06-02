@@ -2,8 +2,8 @@ using Microsoft.Extensions.Caching.Memory;
 using RestSharp;
 using RestSharp.Authenticators;
 using ZeroSeven.TripService.Client;
+using ZeroSeven.WeatherForecastService;
 using ZeroSeven.WillyWeather.Client;
-using ZeroSevent.WeatherForecastService;
 
 var builder = WebApplication.CreateBuilder(args);
 

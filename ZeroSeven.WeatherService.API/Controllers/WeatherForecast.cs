@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
 using ZeroSeven.TripService.Client;
-using ZeroSevent.WeatherForecastService;
+using ZeroSeven.WeatherForecastService;
 
 namespace ZeroSeven.WeatherService.API.Controllers;
 

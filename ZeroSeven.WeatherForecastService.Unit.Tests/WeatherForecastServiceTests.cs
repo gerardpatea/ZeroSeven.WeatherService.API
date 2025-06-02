@@ -1,4 +1,4 @@
-﻿using ZeroSevent.WeatherForecastService;
+﻿using ZeroSeven.WeatherForecastService;
 using NSubstitute;
 using ZeroSeven.TripService.Client;
 using ZeroSeven.WillyWeather.Client;
@@ -17,7 +17,7 @@ namespace ZeroSeven.WeatherForecastService.Unit.Tests
         private IWeatherForecastService _weatherForecastService; 
         private TripService.Client.IZeroSevenTripServiceClient _zeroSevenTripServiceClient; 
         private IWillyWeatherClient _willyWeatherClient; 
-        private ILogger<ZeroSevent.WeatherForecastService.WeatherForecastService> _logger;
+        private ILogger<ZeroSeven.WeatherForecastService.WeatherForecastService> _logger;
 
         #endregion
 
@@ -28,9 +28,9 @@ namespace ZeroSeven.WeatherForecastService.Unit.Tests
         {
             _zeroSevenTripServiceClient = Substitute.For<IZeroSevenTripServiceClient>();
             _willyWeatherClient = Substitute.For<IWillyWeatherClient>();
-            _logger = Substitute.For<ILogger<ZeroSevent.WeatherForecastService.WeatherForecastService>>();
+            _logger = Substitute.For<ILogger<ZeroSeven.WeatherForecastService.WeatherForecastService>>();
 
-            _weatherForecastService = new ZeroSevent.WeatherForecastService.WeatherForecastService(
+            _weatherForecastService = new ZeroSeven.WeatherForecastService.WeatherForecastService(
                 _zeroSevenTripServiceClient,
                 _willyWeatherClient,
                 _logger
