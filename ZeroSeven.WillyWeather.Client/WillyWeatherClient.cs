@@ -15,6 +15,7 @@ namespace ZeroSeven.WillyWeather.Client
         private const string GET_WEATHER_DATE_FORMAT = "yyyy-MM-dd";
         private const int _RETRY_COUNT = 3;
         private TimeSpan _RETRY_INTERVAL = TimeSpan.FromSeconds(1);
+        private TimeSpan _CACHE_EXPIRY = TimeSpan.FromMinutes(5);
 
         #endregion
 
@@ -62,12 +63,12 @@ namespace ZeroSeven.WillyWeather.Client
                         return await _restClient.ExecuteGetAsync<GetWeatherForecastResponse>(request);
                     });
 
-                //Expire the cache if it doesnt get touched within 5minutes
-                var cacheOptions = new MemoryCacheEntryOptions()
-                    .SetSlidingExpiration(TimeSpan.FromMinutes(5));
-
                 if (result != null && result.IsSuccessful)
                 {
+                    //Expire the cache if it doesnt get touched
+                    var cacheOptions = new MemoryCacheEntryOptions()
+                        .SetSlidingExpiration(_CACHE_EXPIRY);
+
                     item = _memoryCache.Set(cacheKey, result.Data, cacheOptions);
                 }
             }
