@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ZeroSeven.WillyWeather.Client
+namespace ZeroSeven.WillyWeather.Client.Models
 {
     //Auto-Generated from https://json2csharp.com/
     public class Day

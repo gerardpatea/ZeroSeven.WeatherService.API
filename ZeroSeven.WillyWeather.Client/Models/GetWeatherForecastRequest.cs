@@ -1,4 +1,4 @@
-﻿namespace ZeroSeven.WillyWeather.Client
+﻿namespace ZeroSeven.WillyWeather.Client.Models
 {
     public class GetWeatherForecastRequest
     {

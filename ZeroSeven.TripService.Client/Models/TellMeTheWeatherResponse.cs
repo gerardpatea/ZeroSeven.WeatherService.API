@@ -1,4 +1,4 @@
-﻿namespace ZeroSeven.TripService.Client
+﻿namespace ZeroSeven.TripService.Client.Models
 {
     public class TellMeTheWeatherResponse
     {

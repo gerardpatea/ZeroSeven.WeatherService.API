@@ -5,6 +5,8 @@ using ZeroSeven.WillyWeather.Client;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Caching.Memory;
 using NSubstitute.Extensions;
+using ZeroSeven.TripService.Client.Models;
+using ZeroSeven.WillyWeather.Client.Models;
 
 namespace ZeroSeven.WeatherForecastService.Unit.Tests
 {
@@ -62,7 +64,7 @@ namespace ZeroSeven.WeatherForecastService.Unit.Tests
             _zeroSevenTripServiceClient.GetNextDayTrip()
                 .Returns(nextDayTripResponse);
 
-            var willyWeatherResponse = new WillyWeather.Client.GetWeatherForecastResponse
+            var willyWeatherResponse = new WillyWeather.Client.Models.GetWeatherForecastResponse
             {
                 Forecasts = new Forecasts
                 {
@@ -98,7 +100,7 @@ namespace ZeroSeven.WeatherForecastService.Unit.Tests
                 }
             };
 
-            _willyWeatherClient.GetWeatherForecast(Arg.Any<WillyWeather.Client.GetWeatherForecastRequest>())
+            _willyWeatherClient.GetWeatherForecast(Arg.Any<GetWeatherForecastRequest>())
                 .Returns(willyWeatherResponse);
 
             var tellMeTheWeathResponse = new TellMeTheWeatherResponse

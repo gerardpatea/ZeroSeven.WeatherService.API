@@ -1,5 +1,6 @@
 ﻿
 using RestSharp;
+using ZeroSeven.WeatherForecastService.Models;
 
 namespace ZeroSeven.WeatherForecastService.Client
 {

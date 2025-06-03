@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Caching.Memory;
 using RestSharp;
+using ZeroSeven.WillyWeather.Client.Models;
 
 namespace ZeroSeven.WillyWeather.Client
 {

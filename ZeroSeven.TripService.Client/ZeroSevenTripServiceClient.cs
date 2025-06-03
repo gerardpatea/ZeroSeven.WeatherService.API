@@ -1,5 +1,6 @@
 ﻿using RestSharp;
 using System.Linq.Expressions;
+using ZeroSeven.TripService.Client.Models;
 
 namespace ZeroSeven.TripService.Client
 {

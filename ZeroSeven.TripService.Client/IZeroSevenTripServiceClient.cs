@@ -1,4 +1,6 @@
-﻿namespace ZeroSeven.TripService.Client
+﻿using ZeroSeven.TripService.Client.Models;
+
+namespace ZeroSeven.TripService.Client
 {
     public interface IZeroSevenTripServiceClient
     {

@@ -1,4 +1,6 @@
-﻿namespace ZeroSeven.WeatherForecastService
+﻿using ZeroSeven.WeatherForecastService.Models;
+
+namespace ZeroSeven.WeatherForecastService
 {
     public interface IWeatherForecastService
     {

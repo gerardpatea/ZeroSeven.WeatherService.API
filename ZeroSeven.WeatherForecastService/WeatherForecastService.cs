@@ -1,7 +1,10 @@
 ﻿using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Logging;
 using ZeroSeven.TripService.Client;
+using ZeroSeven.TripService.Client.Models;
+using ZeroSeven.WeatherForecastService.Models;
 using ZeroSeven.WillyWeather.Client;
+using ZeroSeven.WillyWeather.Client.Models;
 
 namespace ZeroSeven.WeatherForecastService
 {
@@ -35,7 +38,7 @@ namespace ZeroSeven.WeatherForecastService
         /// Gets the weather forecast details given a random trip details from ZeroSeven
         /// </summary>
         /// <returns></returns>
-        public async Task<GetWeatherForecastResponse> GetWeatherForecast()
+        public async Task<Models.GetWeatherForecastResponse> GetWeatherForecast()
         {
             try
             {
@@ -73,7 +76,7 @@ namespace ZeroSeven.WeatherForecastService
                     PreciseCode = willyWeatherDayForecast.PrecisCode
                 });
 
-                return new GetWeatherForecastResponse { Message = tellMeTheWeatherResponse.Message };
+                return new Models.GetWeatherForecastResponse { Message = tellMeTheWeatherResponse.Message };
             }
             catch (Exception ex)
             {

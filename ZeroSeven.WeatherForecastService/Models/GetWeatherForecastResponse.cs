@@ -1,4 +1,4 @@
-﻿namespace ZeroSeven.WeatherForecastService
+﻿namespace ZeroSeven.WeatherForecastService.Models
 {
     public class GetWeatherForecastResponse
     {

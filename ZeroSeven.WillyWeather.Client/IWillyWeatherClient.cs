@@ -1,4 +1,6 @@
-﻿namespace ZeroSeven.WillyWeather.Client
+﻿using ZeroSeven.WillyWeather.Client.Models;
+
+namespace ZeroSeven.WillyWeather.Client
 {
     public interface IWillyWeatherClient
     {
