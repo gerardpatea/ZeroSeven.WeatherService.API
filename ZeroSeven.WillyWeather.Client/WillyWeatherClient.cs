@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Caching.Memory;
+using Polly;
 using RestSharp;
 using ZeroSeven.WillyWeather.Client.Models;
 
@@ -12,9 +13,10 @@ namespace ZeroSeven.WillyWeather.Client
         private readonly IRestClient _restClient;
         private readonly IMemoryCache _memoryCache;
         private const string GET_WEATHER_DATE_FORMAT = "yyyy-MM-dd";
+        private const int _RETRY_COUNT = 3;
+        private TimeSpan _RETRY_INTERVAL = TimeSpan.FromSeconds(1);
 
         #endregion
-
 
         #region Constructor
 
@@ -52,14 +54,22 @@ namespace ZeroSeven.WillyWeather.Client
                     .AddHeader("Content-Type", "application/json")
                     .AddHeader("x-payload", payload);
 
-                var result = await _restClient.ExecuteGetAsync<GetWeatherForecastResponse>(request);
+                var result = await Policy
+                    .HandleResult<RestResponse<GetWeatherForecastResponse>>(x => !x.IsSuccessful)
+                    .WaitAndRetryAsync(_RETRY_COUNT, count => _RETRY_INTERVAL)
+                    .ExecuteAsync(async () =>
+                    {
+                        return await _restClient.ExecuteGetAsync<GetWeatherForecastResponse>(request);
+                    });
 
                 //Expire the cache if it doesnt get touched within 5minutes
-                
                 var cacheOptions = new MemoryCacheEntryOptions()
                     .SetSlidingExpiration(TimeSpan.FromMinutes(5));
 
-                item = _memoryCache.Set(cacheKey, result.Data, cacheOptions);
+                if (result != null && result.IsSuccessful)
+                {
+                    item = _memoryCache.Set(cacheKey, result.Data, cacheOptions);
+                }
             }
 
             return item;

@@ -1,4 +1,5 @@
-﻿using RestSharp;
+﻿using Polly;
+using RestSharp;
 using System.Linq.Expressions;
 using ZeroSeven.TripService.Client.Models;
 
@@ -9,6 +10,8 @@ namespace ZeroSeven.TripService.Client
         #region Members
 
         private readonly IRestClient _restClient;
+        private const int _RETRY_COUNT = 3;
+        private TimeSpan _RETRY_INTERVAL = TimeSpan.FromSeconds(1);
 
         #endregion
 
@@ -32,7 +35,13 @@ namespace ZeroSeven.TripService.Client
         {
             var request = new RestRequest("/getnextdaytrip");
 
-            var result = await _restClient.ExecuteGetAsync<NextDayTripResponse>(request);
+            var result = await Policy
+                .HandleResult<RestResponse<NextDayTripResponse>>(x => !x.IsSuccessful)
+                .WaitAndRetryAsync(_RETRY_COUNT, count => _RETRY_INTERVAL)
+                .ExecuteAsync(async () =>
+                {
+                    return await _restClient.ExecuteGetAsync<NextDayTripResponse>(request);
+                });
 
             return result.Data;
         }
@@ -53,7 +62,13 @@ namespace ZeroSeven.TripService.Client
                     maxTemperature = tellMeTheWeatherRequest.MaxTemperature
                 });
 
-            var result = await _restClient.ExecutePostAsync<TellMeTheWeatherResponse>(request);
+            var result = await Policy
+                .HandleResult<RestResponse<TellMeTheWeatherResponse>>(x => !x.IsSuccessful)
+                .WaitAndRetryAsync(_RETRY_COUNT, count => _RETRY_INTERVAL)
+                .ExecuteAsync(async () =>
+                {
+                    return await _restClient.ExecutePostAsync<TellMeTheWeatherResponse>(request);
+                });
 
             return result.Data;
         }
